@@ -6,7 +6,7 @@ import {
 
 import { FaQuoteLeft } from "react-icons/fa6";
 
-import ownerImage from "../assets/owner.png";
+import OwnerImage from "../assets/Owner.png";
 
 const OwnerMessage = () => {
   return (
@@ -41,7 +41,7 @@ const OwnerMessage = () => {
             <div className="relative overflow-hidden rounded-[24px] border border-cyan-100 bg-white p-2 shadow-xl shadow-slate-200/60">
               <div className="overflow-hidden rounded-[18px] bg-slate-100">
                 <img
-                  src={ownerImage}
+                  src={OwnerImage}
                   alt="Muhammad Shafique"
                   className="h-[430px] w-full object-cover object-top sm:h-[480px]"
                 />
