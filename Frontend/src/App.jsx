@@ -10,7 +10,7 @@ import EventsPage from "./pages/Events/EventsPage";
 import ContactPage from "./pages/Contact/ContactPage";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
-import WhatsAppButton from "./components/WhatsappButton";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
