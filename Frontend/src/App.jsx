@@ -3,14 +3,15 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+
+import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
+import WhatsAppButton from "./components/WhatsAppButton";
 import AboutPage from "./pages/About/AboutPage";
 import ProgramsPage from "./pages/Programs/ProgramsPage";
 import FacultyPage from "./pages/Faculty/FacultyPage";
 import EventsPage from "./pages/Events/EventsPage";
 import ContactPage from "./pages/Contact/ContactPage";
-import Footer from "./components/Footer";
-import ScrollProgress from "./components/ScrollProgress";
-import WhatsAppButton from "./components/WhatsAppButton";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
