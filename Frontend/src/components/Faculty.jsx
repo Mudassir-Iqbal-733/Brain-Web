@@ -1,4 +1,3 @@
-
 import {
   FiStar,
   FiLinkedin,
@@ -25,20 +24,22 @@ const faculty = [
     experience: "8+ Years Experience",
   },
   {
-    name: "Ms. Ayesha Khan",
+    name: "Mr. Usman Raza",
     role: "Web Development Instructor",
     image: Faculty3,
     experience: "7+ Years Experience",
   },
   {
-    name: "Mr. Usman Raza",
+    name: "Ms. Ayesha Khan",
     role: "Graphic Design Instructor",
     image: Faculty4,
     experience: "9+ Years Experience",
   },
 ];
 
-const Faculty = () => {
+const Faculty = ({ showAll = false }) => {
+  const visibleFaculty = showAll ? faculty : faculty.slice(0, 4);
+
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-cyan-100/40 blur-3xl" />
@@ -69,7 +70,7 @@ const Faculty = () => {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {faculty.map((member) => (
+          {visibleFaculty.map((member) => (
             <div
               key={member.name}
               className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#0d9488]/30 hover:shadow-xl hover:shadow-[#0d9488]/10"
@@ -126,18 +127,20 @@ const Faculty = () => {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <a
-            href="/faculty"
-            className="inline-flex items-center gap-2 rounded-full bg-[#0d9488] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0d9488]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7f75] hover:shadow-xl hover:shadow-[#0d9488]/25"
-          >
-            View All Faculty
-            <FiArrowRight
-              size={17}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </a>
-        </div>
+        {!showAll && (
+          <div className="mt-10 flex justify-center">
+            <a
+              href="/faculty"
+              className="inline-flex items-center gap-2 rounded-full bg-[#0d9488] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0d9488]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7f75] hover:shadow-xl hover:shadow-[#0d9488]/25"
+            >
+              View All Faculty
+              <FiArrowRight
+                size={17}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
