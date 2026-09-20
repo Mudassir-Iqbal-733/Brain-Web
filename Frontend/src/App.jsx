@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutPage from "./pages/About/AboutPage";
-import ProgramsPage from "./pages/Programs/Programspage";
+import ProgramsPage from "./pages/Programs/ProgramsPage";
 import FacultyPage from "./pages/Faculty/FacultyPage";
 import EventsPage from "./pages/Events/EventsPage";
 import ContactPage from "./pages/Contact/ContactPage";
