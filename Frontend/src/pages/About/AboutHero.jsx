@@ -12,7 +12,7 @@ const AboutHero = () => {
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#0d9488]/10 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0d9488] shadow-sm">
               <span className="h-2 w-2 rounded-full bg-[#0d9488]" />
-              Brain Inspire System of Education
+              Agile Institute of Rehabilitation Sciences
             </div>
 
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
@@ -28,7 +28,7 @@ const AboutHero = () => {
             </div>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-              Brain Inspire System of Education is dedicated to providing
+              Agile Institute of Rehabilitation Sciences is dedicated to providing
               quality education, practical skills, and industry-focused
               training to help students build successful careers in the
               digital world.

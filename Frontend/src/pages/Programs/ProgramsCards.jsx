@@ -1,58 +1,50 @@
 import {
+  FiActivity,
   FiCode,
-  FiPenTool,
-  FiGlobe,
-  FiSmartphone,
+  FiCpu,
+  FiHeart,
   FiClock,
-  FiCreditCard,
   FiArrowRight,
+  FiBookOpen,
 } from "react-icons/fi";
 
-import Digital1 from "../../assets/Digital1.jpg";
-import Digital2 from "../../assets/Digital2.jpg";
-import Digital3 from "../../assets/Digital3.jpg";
-import Digital4 from "../../assets/Digital4.jpg";
+import DPT from "../../assets/DPT.png";
+import CS from "../../assets/CS.png";
+import IT from "../../assets/IT.png";
+import Pharmacy from "../../assets/Pharmacy.png";
 
 const programs = [
   {
-    title: "Web Development",
+    title: "Doctor of Physical Therapy (DPT)",
     description:
-      "Learn modern web technologies and build responsive, professional websites with practical hands-on training.",
-    image: Digital1,
+      "Develop professional knowledge and practical skills in physical therapy and rehabilitation sciences for a rewarding healthcare career.",
+    image: DPT,
+    icon: FiActivity,
+    duration: "10 Semesters (5 Years)",
+  },
+  {
+    title: "ADP CS",
+    description:
+      "Build a strong foundation in computer science with practical knowledge of programming, software development, databases, and modern technologies.",
+    image: CS,
     icon: FiCode,
-    duration: "6 Months",
-    totalFee: "PKR 25,000",
-    installment: "PKR 4,500",
+    duration: "4 Semesters (2 Years)",
   },
   {
-    title: "Graphic Design",
+    title: "ADP IT",
     description:
-      "Develop creative design skills for branding, digital media, social media content, and visual communication.",
-    image: Digital2,
-    icon: FiPenTool,
-    duration: "4 Months",
-    totalFee: "PKR 20,000",
-    installment: "PKR 5,000",
+      "Gain practical information technology skills covering modern computing, networks, databases, systems, and digital technologies.",
+    image: IT,
+    icon: FiCpu,
+    duration: "4 Semesters (2 Years)",
   },
   {
-    title: "Digital Marketing",
+    title: "Pharmacy Technician",
     description:
-      "Learn practical strategies for social media, search marketing, content marketing, and online business growth.",
-    image: Digital3,
-    icon: FiGlobe,
-    duration: "3 Months",
-    totalFee: "PKR 15,000",
-    installment: "PKR 5,000",
-  },
-  {
-    title: "Mobile App Development",
-    description:
-      "Learn how to design and develop modern mobile applications through practical development and project-based learning.",
-    image: Digital4,
-    icon: FiSmartphone,
-    duration: "6 Months",
-    totalFee: "PKR 30,000",
-    installment: "PKR 5,000",
+      "Develop essential pharmaceutical knowledge and practical skills to support professional pharmacy services and healthcare delivery.",
+    image: Pharmacy,
+    icon: FiHeart,
+    duration: "2 Years",
   },
 ];
 
@@ -64,13 +56,13 @@ const ProgramsCards = () => {
       <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-teal-100/50 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
-          <span className="inline-flex rounded-full bg-cyan-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0d9488]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0d9488]">
+            <FiBookOpen size={15} />
             Our Programs
-          </span>
+          </div>
 
-          <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
             Discover Our{" "}
             <span className="text-[#0d9488]">Programs</span>
           </h2>
@@ -96,7 +88,6 @@ const ProgramsCards = () => {
                 className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0d9488]/30 hover:shadow-xl hover:shadow-[#0d9488]/10"
               >
                 <div className="flex flex-col lg:flex-row">
-
                   <div className="relative h-60 w-full shrink-0 overflow-hidden lg:h-auto lg:w-[290px]">
                     <img
                       src={program.image}
@@ -121,13 +112,11 @@ const ProgramsCards = () => {
                   </div>
 
                   <div className="flex flex-1 flex-col justify-center p-6 sm:p-7 lg:p-8">
-
-                    <div className="grid gap-7 lg:grid-cols-[1fr_300px] lg:items-center">
-
+                    <div className="grid gap-7 lg:grid-cols-[1fr_230px] lg:items-center">
                       <div>
                         <div className="mb-3 flex items-center gap-2">
                           <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#0d9488]">
-                            Professional Program
+                            Academic Program
                           </span>
                         </div>
 
@@ -160,47 +149,21 @@ const ProgramsCards = () => {
                       </div>
 
                       <div className="rounded-xl border border-cyan-100 bg-cyan-50/50 p-5">
-
-                        <div className="grid grid-cols-2 gap-4">
-
-                          <div>
-                            <span className="block text-[11px] font-semibold uppercase tracking-wide text-slate-400">
-                              Total Fee
-                            </span>
-
-                            <span className="mt-1 block text-lg font-bold text-slate-900">
-                              {program.totalFee}
-                            </span>
-                          </div>
-
-                          <div>
-                            <span className="block text-[11px] font-semibold uppercase tracking-wide text-slate-400">
-                              Monthly
-                            </span>
-
-                            <span className="mt-1 block text-lg font-bold text-[#0d9488]">
-                              {program.installment}
-                            </span>
-                          </div>
-
-                        </div>
-
-                        <div className="my-4 h-px bg-cyan-100" />
-
-                        <div className="mb-4 flex items-center gap-2">
-                          <FiCreditCard
-                            size={16}
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">
+                          <Icon
+                            size={23}
                             className="text-[#0d9488]"
                           />
-
-                          <span className="text-xs text-slate-500">
-                            Easy monthly installment available
-                          </span>
                         </div>
+
+                        <p className="mt-4 text-sm leading-6 text-slate-500">
+                          Explore this program and take the next step toward
+                          your professional career.
+                        </p>
 
                         <a
                           href="/admission"
-                          className="group/button inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#0d9488] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#0f766e] hover:shadow-lg hover:shadow-[#0d9488]/20"
+                          className="group/button mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#0d9488] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#0f766e] hover:shadow-lg hover:shadow-[#0d9488]/20"
                         >
                           Apply Now
 
@@ -209,9 +172,7 @@ const ProgramsCards = () => {
                             className="transition-transform duration-300 group-hover/button:translate-x-1"
                           />
                         </a>
-
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -219,7 +180,6 @@ const ProgramsCards = () => {
             );
           })}
         </div>
-
       </div>
     </section>
   );

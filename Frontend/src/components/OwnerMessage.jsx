@@ -34,7 +34,6 @@ const OwnerMessage = () => {
         </div>
 
         <div className="grid items-center gap-10 lg:grid-cols-[380px_1fr] lg:gap-14 xl:grid-cols-[420px_1fr]">
-          
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-cyan-100 via-white to-teal-100" />
 
@@ -42,7 +41,7 @@ const OwnerMessage = () => {
               <div className="overflow-hidden rounded-[18px] bg-slate-100">
                 <img
                   src={OwnerImage}
-                  alt="Muhammad Shafique"
+                  alt="Dr. Muhammad Hafeez"
                   className="h-[430px] w-full object-cover object-top sm:h-[480px]"
                 />
               </div>
@@ -61,21 +60,24 @@ const OwnerMessage = () => {
             />
 
             <p className="text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              "Welcome to Brain Inspire System of Education Pvt Ltd. Our mission is to
-              provide quality education, practical skills, and modern learning
-              opportunities that help students build a successful future.
-              We believe in empowering every learner with knowledge,
-              confidence, and the skills needed to grow in today's
-              technology-driven world."
+              "Welcome to Agile Institute of Rehabilitation Sciences (AIRS).
+              With a deep commitment to excellence in rehabilitation sciences
+              education, we strive to produce competent professionals who can
+              make a meaningful difference in healthcare and technology
+              sectors. Our state-of-the-art facilities and experienced faculty
+              ensure that every student receives the best possible education
+              and training. At AIRS, we believe in nurturing talent, fostering
+              innovation, and building character. Join us on this journey of
+              excellence and discovery."
             </p>
 
             <div className="mt-7 border-t border-slate-100 pt-6">
               <h3 className="text-2xl font-bold text-slate-950">
-                Muhammad Shafique
+                Dr. Muhammad Hafeez
               </h3>
 
               <p className="mt-1 text-sm font-semibold text-[#0d9488]">
-                Owner & CEO
+                CEO & Head of Institute
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500">
@@ -84,7 +86,7 @@ const OwnerMessage = () => {
                     size={16}
                     className="text-[#0d9488]"
                   />
-                  <span>Brain Inspire System of Education Pvt Ltd</span>
+                  <span>Established 2014</span>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -92,7 +94,7 @@ const OwnerMessage = () => {
                     size={16}
                     className="text-[#0d9488]"
                   />
-                  <span>Professional Leadership</span>
+                  <span>22 Years Experience</span>
                 </div>
               </div>
             </div>
@@ -139,7 +141,6 @@ const OwnerMessage = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

@@ -10,25 +10,25 @@ const features = [
   {
     title: "Quality Education",
     description:
-      "Industry-focused learning designed to develop practical skills and prepare students for successful careers.",
+      "Industry-relevant curriculum designed for success in healthcare and technology.",
     icon: FiAward,
   },
   {
     title: "Expert Faculty",
     description:
-      "Learn from experienced professionals and dedicated educators with practical knowledge and expertise.",
+      "Learn from experienced professionals and academics with international qualifications.",
     icon: FiUserCheck,
   },
   {
     title: "Modern Facilities",
     description:
-      "Access modern labs, technology, and learning resources designed for an effective learning experience.",
+      "State-of-the-art labs, clinical training facilities, and learning resources.",
     icon: FiMonitor,
   },
   {
     title: "Industry Links",
     description:
-      "Build valuable connections with businesses and professionals for career growth and opportunities.",
+      "Strong partnerships with hospitals, clinics, and healthcare providers.",
     icon: FiUsers,
   },
 ];
@@ -44,12 +44,12 @@ const WhyChooseUs = () => {
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0d9488]">
             <FiStar size={15} />
-            Why Choose Us
+            Why AIRS
           </div>
 
           <h2 className="text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
             Why Choose{" "}
-            <span className="text-[#0d9488]">Brain Inspire System?</span>
+            <span className="text-[#0d9488]">AIRS?</span>
           </h2>
 
           <div className="mx-auto mt-4 flex items-center justify-center gap-1">
@@ -58,8 +58,8 @@ const WhyChooseUs = () => {
           </div>
 
           <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-            Discover what makes Brain Inspire System of Education Pvt Ltd a trusted choice for modern
-            education and digital skills.
+            Discover what makes AIRS the preferred choice for rehabilitation
+            sciences education
           </p>
         </div>
 

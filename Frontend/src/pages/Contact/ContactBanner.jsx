@@ -9,7 +9,7 @@ const ContactBanner = () => {
       <div className="relative mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#0d9488]">
-            Brain Inspire System of Education
+            Agile Institute of Rehabilitation Sciences
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -23,7 +23,7 @@ const ContactBanner = () => {
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
             Have a question or need more information? Get in touch with
-            Brain Inspire System of Education. We are here to help you
+           Agile Institute of Rehabilitation Sciences. We are here to help you
             take the next step in your learning journey.
           </p>
 

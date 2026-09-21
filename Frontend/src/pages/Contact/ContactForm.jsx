@@ -215,13 +215,13 @@ const ContactForm = () => {
                 </h3>
 
                 <p className="mt-1 text-sm text-slate-500">
-                  Visit Brain Inspire System of Education
+                  Visit Agile Institute of Rehabilitation Sciences
                 </p>
               </div>
 
               <div className="h-72 w-full">
                 <iframe
-                  title="Brain Inspire System of Education Location"
+                  title="Agile Institute of Rehabilitation Sciences Location"
                   src="https://www.google.com/maps?q=Bahawalpur,Punjab,Pakistan&output=embed"
                   className="h-full w-full border-0"
                   loading="lazy"

@@ -40,7 +40,7 @@ const App = () => {
               </div>
 
               <h1 className="mt-8 max-w-2xl text-xl font-bold tracking-wide text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.55)] sm:text-2xl lg:text-3xl">
-                Brain Inspire System Of Education PVT LTD
+                Agile Institute of Rehabilitation Sciences
               </h1>
 
               <div className="mt-5 flex items-center justify-center gap-2">

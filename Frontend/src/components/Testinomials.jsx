@@ -2,28 +2,28 @@ import { FiStar, FiMessageCircle } from "react-icons/fi";
 
 const testimonials = [
   {
-    name: "Muhammad Hamza",
-    course: "Web Development Student",
-    initials: "MH",
+    name: "Ahmed Raza",
+    course: "DPT Student",
+    initials: "A",
     rating: 5,
     review:
-      "Brain Software helped me turn my interest in web development into practical skills. The instructors are supportive, knowledgeable, and always ready to help.",
+      "AIRS has provided me with the best education and practical training in physical therapy. The faculty is exceptional.",
   },
   {
-    name: "Ayesha Malik",
-    course: "Graphic Design Student",
-    initials: "AM",
+    name: "Sana Tariq",
+    course: "ADP-CS Student",
+    initials: "S",
     rating: 5,
     review:
-      "I really enjoyed my learning experience here. The practical projects and friendly teaching environment helped me become more confident in my skills.",
+      "The faculty at AIRS is amazing. I've learned so much about computer science and development. The labs are fully equipped.",
   },
   {
-    name: "Abdullah Khan",
-    course: "Software Development Student",
-    initials: "AK",
+    name: "Muhammad Bilal",
+    course: "Pharmacy Technician",
+    initials: "M",
     rating: 5,
     review:
-      "The courses are well structured and focused on real-world skills. I learned a lot through practical assignments and guidance from experienced instructors.",
+      "The practical training at AIRS prepared me well for the pharmacy industry. I got hands-on experience with real-world scenarios.",
   },
 ];
 
@@ -38,7 +38,7 @@ const Testimonials = () => {
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0d9488]">
             <FiMessageCircle size={15} />
-           Testinomials
+            Testimonials
           </div>
 
           <h2 className="text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
@@ -52,8 +52,7 @@ const Testimonials = () => {
           </div>
 
           <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-            Hear from our students about their learning experience, skills,
-            and journey at Brain Software.
+            Real stories from our students about their experience at AIRS
           </p>
         </div>
 
@@ -114,7 +113,7 @@ const Testimonials = () => {
           </div>
 
           <p className="text-sm font-medium text-slate-500">
-            Trusted by students building their future with practical skills.
+            Hear from students building their future with AIRS.
           </p>
         </div>
       </div>
@@ -123,4 +122,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-

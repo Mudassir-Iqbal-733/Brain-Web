@@ -55,7 +55,7 @@ const CoreValues = () => {
           </div>
 
           <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base">
-            At Brain Inspire System of Education, our core values guide the way
+            At Agile Institute of Rehabilitation Sciences, our core values guide the way
             we teach, support our students, and build a better learning
             experience for everyone.
           </p>

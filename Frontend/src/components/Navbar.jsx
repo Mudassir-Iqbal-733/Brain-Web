@@ -63,27 +63,43 @@ const Navbar = () => {
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-white/95">
               <a
-                href="tel:+923001234567"
-                className="flex items-center gap-1.5 transition hover:text-cyan-100"
+                href="tel:0622888596"
+                className="flex items-center gap-1.5 text-sm transition hover:text-cyan-100"
               >
                 <FiPhone size={14} />
-                <span>0300-1234567</span>
+                <span>0622-888596</span>
               </a>
 
               <a
-                href="tel:+923017654321"
-                className="flex items-center gap-1.5 transition hover:text-cyan-100"
+                href="tel:0622888597"
+                className="flex items-center gap-1.5 text-sm transition hover:text-cyan-100"
               >
                 <FiPhone size={14} />
-                <span>0301-7654321</span>
+                <span>0622-888597</span>
               </a>
 
               <a
-                href="mailto:info@brain.edu.pk"
-                className="hidden items-center gap-1.5 transition hover:text-cyan-100 lg:flex"
+                href="tel:03212319576"
+                className="flex items-center gap-1.5 text-sm transition hover:text-cyan-100"
+              >
+                <FiPhone size={14} />
+                <span>0321-2319576</span>
+              </a>
+
+              <a
+                href="tel:03314888596"
+                className="flex items-center gap-1.5 text-sm transition hover:text-cyan-100"
+              >
+                <FiPhone size={14} />
+                <span>0331-4888596</span>
+              </a>
+
+              <a
+                href="mailto:info@airs.edu.pk"
+                className="hidden items-center gap-1.5 text-sm transition hover:text-cyan-100 lg:flex"
               >
                 <FiMail size={14} />
-                <span>info@brain.edu.pk</span>
+                <span>info@airs.edu.pk</span>
               </a>
             </div>
           </div>
@@ -95,12 +111,12 @@ const Navbar = () => {
           <a
             href="/"
             onClick={closeMenu}
-            aria-label="Brain Software Home"
+            aria-label="AIRS Home"
             className="flex shrink-0 items-center"
           >
             <img
               src={logo}
-              alt="Brain Software"
+              alt="AIRS"
               className="h-11 w-auto object-contain sm:h-12"
             />
           </a>
@@ -113,7 +129,7 @@ const Navbar = () => {
                 <a
                   key={link.path}
                   href={link.path}
-                  className={`relative px-4 py-2 text-sm font-medium transition ${
+                  className={`relative px-4 py-2 text-base font-semibold transition ${
                     active
                       ? "text-[#0d9488]"
                       : "text-slate-700 hover:text-[#0d9488]"

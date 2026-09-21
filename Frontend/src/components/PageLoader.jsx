@@ -14,9 +14,13 @@ const PageLoader = () => {
           <Spinner className="size-10 text-cyan-400" />
         </div>
 
-        <h1 className="mt-8 max-w-2xl text-xl font-bold tracking-wide text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.55)] sm:text-2xl lg:text-3xl">
-          Brain Inspire System Of Education PVT LTD
+        <h1 className="mt-8 max-w-3xl text-xl font-bold tracking-wide text-cyan-300 drop-shadow-[0_0_10px_rgba(34,211,238,0.55)] sm:text-2xl lg:text-3xl">
+          Agile Institute of Rehabilitation Sciences
         </h1>
+
+        <p className="mt-2 text-sm font-medium text-teal-400 sm:text-base">
+          AIRS
+        </p>
 
         <div className="mt-5 flex items-center justify-center gap-2">
           <span className="h-1 w-14 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)]" />

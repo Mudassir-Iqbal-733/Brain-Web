@@ -20,15 +20,15 @@ const Footer = () => {
             <a href="/" className="inline-flex items-center">
               <img
                 src={logo}
-                alt="Brain Software"
+                alt="Agile Institute of Rehabilitation Sciences"
                 className="h-12 w-auto object-contain"
               />
             </a>
 
             <p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">
-              Brain Software is committed to providing quality education,
-              practical digital skills, and career-focused training to help
-              students build a successful future.
+              Agile Institute of Rehabilitation Sciences is committed to
+              providing quality education, practical learning, and
+              career-focused programs in healthcare and technology.
             </p>
 
             <div className="mt-6 flex items-center gap-3">
@@ -65,12 +65,13 @@ const Footer = () => {
 
             <ul className="mt-5 space-y-3">
               {[
+                ["Home", "/"],
                 ["About Us", "/about"],
                 ["Programs", "/programs"],
                 ["Faculty", "/faculty"],
                 ["Events", "/events"],
                 ["Contact", "/contact"],
-                ["Admissions", "/admissions"],
+                ["Admissions", "/admission"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <a
@@ -99,7 +100,7 @@ const Footer = () => {
                   href="/programs"
                   className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  Web Development
+                  Doctor of Physical Therapy (DPT)
                 </a>
               </li>
 
@@ -108,7 +109,7 @@ const Footer = () => {
                   href="/programs"
                   className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  Software Development
+                  ADP Computer Science
                 </a>
               </li>
 
@@ -117,7 +118,7 @@ const Footer = () => {
                   href="/programs"
                   className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  Graphic Designing
+                  ADP Information Technology
                 </a>
               </li>
 
@@ -126,16 +127,7 @@ const Footer = () => {
                   href="/programs"
                   className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  Digital Marketing
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="/programs"
-                  className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
-                >
-                  Professional IT Courses
+                  Pharmacy Technician
                 </a>
               </li>
             </ul>
@@ -158,46 +150,88 @@ const Footer = () => {
                 </p>
               </div>
 
-              <a
-                href="tel:+923000000000"
-                className="flex items-center gap-3 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
-              >
-                <FiPhone
-                  size={16}
-                  className="shrink-0 text-[#0d9488]"
-                />
-                +92 300 0000000
-              </a>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                <a
+                  href="tel:0622888596"
+                  className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                >
+                  <FiPhone
+                    size={15}
+                    className="shrink-0 text-[#0d9488]"
+                  />
+                  0622-888596
+                </a>
+
+                <a
+                  href="tel:0622888597"
+                  className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                >
+                  <FiPhone
+                    size={15}
+                    className="shrink-0 text-[#0d9488]"
+                  />
+                  0622-888597
+                </a>
+
+                <a
+                  href="tel:03212319576"
+                  className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                >
+                  <FiPhone
+                    size={15}
+                    className="shrink-0 text-[#0d9488]"
+                  />
+                  0321-2319576
+                </a>
+
+                <a
+                  href="tel:03314888596"
+                  className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                >
+                  <FiPhone
+                    size={15}
+                    className="shrink-0 text-[#0d9488]"
+                  />
+                  0331-4888596
+                </a>
+              </div>
 
               <a
-                href="mailto:info@brainsoftware.edu.pk"
+                href="mailto:info@airs.edu.pk"
                 className="flex items-center gap-3 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
               >
                 <FiMail
                   size={16}
                   className="shrink-0 text-[#0d9488]"
                 />
-                info@brainsoftware.edu.pk
+                info@airs.edu.pk
               </a>
 
               <a
-                href="/"
+                href="https://airs.edu.pk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
               >
                 <FiGlobe
                   size={16}
                   className="shrink-0 text-[#0d9488]"
                 />
-                www.brainsoftware.edu.pk
+                www.airs.edu.pk
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-8 border-t border-slate-800 pt-4">
-          <div className="flex justify-center text-center">
+          <div className="flex flex-col items-center justify-center gap-2 text-center sm:flex-row sm:justify-between">
             <p className="text-xs text-slate-500">
-              © {new Date().getFullYear()} Brain Software. All rights reserved.
+              © {new Date().getFullYear()} Agile Institute of Rehabilitation
+              Sciences. All rights reserved.
+            </p>
+
+            <p className="text-xs text-slate-600">
+              Quality Education • Professional Excellence • Student Success
             </p>
           </div>
         </div>

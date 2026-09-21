@@ -1,44 +1,68 @@
-import {
-  FiStar,
-  FiLinkedin,
-  FiMail,
-  FiArrowRight,
-} from "react-icons/fi";
+import { FiStar, FiArrowRight } from "react-icons/fi";
 
-import Faculty1 from "../assets/Faculty1.jpg";
-import Faculty2 from "../assets/Faculty2.jpg";
-import Faculty3 from "../assets/Faculty3.jpg";
-import Faculty4 from "../assets/Faculty4.jpg";
+import Umair from "../assets/Umair.png";
+import Shabana from "../assets/Shabana.png";
+import Nosheen from "../assets/Nosheen.png";
+import Anam from "../assets/Anam.png";
+import Rida from "../assets/Rida.png";
+import Kiran from "../assets/Kiran.png";
+import Areej from "../assets/Areej.png";
+import Abdullah from "../assets/Abdullah.png";
 
 const faculty = [
   {
-    name: "Dr. Muhammad Ahmed",
-    role: "Head of Computer Science",
-    image: Faculty1,
-    experience: "12+ Years Experience",
+    name: "Assistant Professor Muhammad Umair Hassan PT",
+    role: "Campus Coordinator",
+    qualification: "MS-SPT* | DPT",
+    image: Umair,
   },
   {
-    name: "Mr. Ali Hassan",
-    role: "Senior Software Instructor",
-    image: Faculty2,
-    experience: "8+ Years Experience",
+    name: "Dr. Shabana Rahim PT",
+    role: "Assistant Professor / Vice Principal",
+    qualification: "MSPT | DPT",
+    image: Shabana,
   },
   {
-    name: "Mr. Usman Raza",
-    role: "Web Development Instructor",
-    image: Faculty3,
-    experience: "7+ Years Experience",
+    name: "Dr. Nosheen Rao PT",
+    role: "Assistant Professor",
+    qualification: "MSPT | DPT",
+    image: Nosheen,
   },
   {
-    name: "Ms. Ayesha Khan",
-    role: "Graphic Design Instructor",
-    image: Faculty4,
-    experience: "9+ Years Experience",
+    name: "Dr. Anam Amin PT",
+    role: "Assistant Professor",
+    qualification: "MSPT | DPT",
+    image: Anam,
+  },
+  {
+    name: "Dr. Rida Nadeem PT",
+    role: "Senior Lecturer",
+    qualification: "MSPT* | DPT",
+    image: Rida,
+  },
+  {
+    name: "Dr. Kiran Shahzadi PT",
+    role: "Lecturer / Academic Coordinator",
+    qualification: "MSPT* | DPT",
+    image: Kiran,
+  },
+  {
+    name: "Dr. Areej Jameel PT",
+    role: "Senior Lecturer",
+    qualification: "MSPT* | DPT",
+    image: Areej,
+  },
+  {
+    name: "Dr. Abdullah Zahid PT",
+    role: "Demonstrator",
+    qualification: "DPT",
+    image: Abdullah,
   },
 ];
 
 const Faculty = ({ showAll = false }) => {
-  const visibleFaculty = showAll ? faculty : faculty.slice(0, 4);
+  const visibleFaculty = showAll ? faculty : faculty.slice(0, 8);
+  const hasMoreFaculty = faculty.length > 8;
 
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
@@ -64,8 +88,8 @@ const Faculty = ({ showAll = false }) => {
           </div>
 
           <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-            Learn from experienced instructors who bring practical knowledge,
-            industry experience, and a passion for helping students succeed.
+            Learn from experienced professionals and academics dedicated to
+            quality education and student success.
           </p>
         </div>
 
@@ -86,31 +110,13 @@ const Faculty = ({ showAll = false }) => {
 
                 <div className="absolute bottom-4 left-4 right-4">
                   <span className="inline-flex rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-[#0d9488] backdrop-blur-sm">
-                    {member.experience}
+                    {member.qualification}
                   </span>
-                </div>
-
-                <div className="absolute right-4 top-4 flex translate-x-3 gap-2 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-                  <a
-                    href="#"
-                    aria-label={`${member.name} LinkedIn`}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0d9488] shadow-md transition-colors hover:bg-[#0d9488] hover:text-white"
-                  >
-                    <FiLinkedin size={16} />
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label={`Email ${member.name}`}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0d9488] shadow-md transition-colors hover:bg-[#0d9488] hover:text-white"
-                  >
-                    <FiMail size={16} />
-                  </a>
                 </div>
               </div>
 
               <div className="px-6 py-6 text-center">
-                <h3 className="text-lg font-bold text-slate-950 transition-colors duration-300 group-hover:text-[#0d9488]">
+                <h3 className="text-lg font-bold leading-7 text-slate-950 transition-colors duration-300 group-hover:text-[#0d9488]">
                   {member.name}
                 </h3>
 
@@ -119,7 +125,7 @@ const Faculty = ({ showAll = false }) => {
                   <span className="h-1 w-5 rounded-full bg-cyan-200" />
                 </div>
 
-                <p className="mt-3 text-sm font-medium text-slate-500">
+                <p className="mt-3 text-sm font-medium leading-6 text-slate-500">
                   {member.role}
                 </p>
               </div>
@@ -127,11 +133,11 @@ const Faculty = ({ showAll = false }) => {
           ))}
         </div>
 
-        {!showAll && (
+        {!showAll && hasMoreFaculty && (
           <div className="mt-10 flex justify-center">
             <a
               href="/faculty"
-              className="inline-flex items-center gap-2 rounded-full bg-[#0d9488] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0d9488]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7f75] hover:shadow-xl hover:shadow-[#0d9488]/25"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#0d9488] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0d9488]/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7f75] hover:shadow-xl hover:shadow-[#0d9488]/25"
             >
               View All Faculty
               <FiArrowRight
