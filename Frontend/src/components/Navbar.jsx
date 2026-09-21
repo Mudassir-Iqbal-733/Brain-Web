@@ -130,7 +130,7 @@ const Navbar = () => {
           </div>
 
           <a
-            href="/contact"
+            href="/admission"
             className="hidden items-center gap-2 rounded-full bg-[#0d9488] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0f766e] lg:flex"
           >
             <FiSend size={16} />
@@ -191,7 +191,7 @@ const Navbar = () => {
               </div>
 
               <a
-                href="/contact"
+                href="/admission"
                 onClick={closeMenu}
                 className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-[#0d9488] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#0f766e]"
               >

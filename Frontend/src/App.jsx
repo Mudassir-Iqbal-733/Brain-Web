@@ -12,6 +12,7 @@ import ProgramsPage from "./pages/Programs/ProgramsPage";
 import FacultyPage from "./pages/Faculty/FacultyPage";
 import EventsPage from "./pages/Events/EventsPage";
 import ContactPage from "./pages/Contact/ContactPage";
+import Apply from "./pages/Apply";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/faculty" element={<FacultyPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/admission" element={<Apply />} />
       </Routes>
 
       <Footer />
