@@ -15,7 +15,7 @@ const Login = () => {
 
     if (
       email === "admin@brain.edu.pk" &&
-      password === "Brain@2026#Admin"
+      password === "Brain"
     ) {
       localStorage.setItem("adminLoggedIn", "true");
       navigate("/admin/dashboard");

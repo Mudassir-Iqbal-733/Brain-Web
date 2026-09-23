@@ -15,10 +15,7 @@ const ContactForm = () => {
 
       <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr] lg:gap-14">
-
-          {/* FORM */}
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50 sm:p-8 lg:p-10">
-
             <div className="mb-8">
               <span className="inline-flex rounded-full bg-[#0d9488]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[#0d9488]">
                 Send Message
@@ -40,10 +37,7 @@ const ContactForm = () => {
             </div>
 
             <form className="space-y-5">
-
-              {/* FULL NAME + EMAIL */}
               <div className="grid gap-5 sm:grid-cols-2">
-
                 <div>
                   <label
                     htmlFor="fullName"
@@ -74,17 +68,14 @@ const ContactForm = () => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Enter your email address"
                     required
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0d9488] focus:bg-white focus:ring-4 focus:ring-[#0d9488]/10"
                   />
                 </div>
-
               </div>
 
-              {/* PHONE + SUBJECT */}
               <div className="grid gap-5 sm:grid-cols-2">
-
                 <div>
                   <label
                     htmlFor="phone"
@@ -114,14 +105,12 @@ const ContactForm = () => {
                     id="subject"
                     name="subject"
                     type="text"
-                    placeholder="Enter subject"
+                    placeholder="What is this about?"
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#0d9488] focus:bg-white focus:ring-4 focus:ring-[#0d9488]/10"
                   />
                 </div>
-
               </div>
 
-              {/* PROGRAM */}
               <div>
                 <label
                   htmlFor="program"
@@ -137,19 +126,19 @@ const ContactForm = () => {
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-[#0d9488] focus:bg-white focus:ring-4 focus:ring-[#0d9488]/10"
                 >
                   <option value="" disabled>
-                    Select a program (optional)
-                  </option>
-
-                  <option value="ADP CS">
-                    ADP CS
-                  </option>
-
-                  <option value="ADP IT">
-                    ADP IT
+                    Select a program
                   </option>
 
                   <option value="Doctor of Physical Therapy (DPT)">
                     Doctor of Physical Therapy (DPT)
+                  </option>
+
+                  <option value="ADP CS">
+                    ADP Computer Science
+                  </option>
+
+                  <option value="ADP IT">
+                    ADP Information Technology
                   </option>
 
                   <option value="Pharmacy Technician">
@@ -158,7 +147,6 @@ const ContactForm = () => {
                 </select>
               </div>
 
-              {/* MESSAGE */}
               <div>
                 <label
                   htmlFor="message"
@@ -177,7 +165,6 @@ const ContactForm = () => {
                 />
               </div>
 
-              {/* PRIVACY */}
               <label className="flex cursor-pointer items-start gap-3">
                 <input
                   type="checkbox"
@@ -191,7 +178,6 @@ const ContactForm = () => {
                 </span>
               </label>
 
-              {/* SEND BUTTON */}
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0d9488] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal-200 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7f75] hover:shadow-xl sm:w-auto"
@@ -199,16 +185,11 @@ const ContactForm = () => {
                 <FiSend size={18} />
                 Send Message
               </button>
-
             </form>
           </div>
 
-          {/* RIGHT SIDE */}
           <div className="space-y-6">
-
-            {/* MAP */}
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-200/50">
-
               <div className="border-b border-slate-100 px-6 py-5">
                 <h3 className="text-xl font-bold text-slate-900">
                   Find Us
@@ -228,24 +209,16 @@ const ContactForm = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-
             </div>
 
-            {/* QUICK CONTACT */}
             <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50 sm:p-7">
-
               <h3 className="text-xl font-bold text-slate-900">
                 Quick Contact
               </h3>
 
               <div className="mt-6 space-y-5">
-
-                {/* PHONE */}
-                <a
-                  href="tel:+923111111111"
-                  className="group flex items-start gap-4"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0d9488]/10 text-[#0d9488] transition-all group-hover:bg-[#0d9488] group-hover:text-white">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0d9488]/10 text-[#0d9488]">
                     <FiPhone size={19} />
                   </div>
 
@@ -254,19 +227,47 @@ const ContactForm = () => {
                       Phone
                     </p>
 
-                    <p className="mt-1 text-sm font-semibold text-slate-700 group-hover:text-[#0d9488]">
-                      +92 311 1111111
-                    </p>
+                    <div className="mt-1 space-y-1">
+                      <a
+                        href="tel:0622888596"
+                        className="block text-sm font-semibold text-slate-700 hover:text-[#0d9488]"
+                      >
+                        0622888596
+                      </a>
 
-                    <p className="text-sm font-semibold text-slate-700 group-hover:text-[#0d9488]">
-                      +92 322 2222222
-                    </p>
+                      <a
+                        href="tel:0622888597"
+                        className="block text-sm font-semibold text-slate-700 hover:text-[#0d9488]"
+                      >
+                        0622888597
+                      </a>
+
+                      <a
+                        href="tel:03212319576"
+                        className="block text-sm font-semibold text-slate-700 hover:text-[#0d9488]"
+                      >
+                        03212319576
+                      </a>
+
+                      <a
+                        href="tel:03314888596"
+                        className="block text-sm font-semibold text-slate-700 hover:text-[#0d9488]"
+                      >
+                        03314888596
+                      </a>
+
+                      <a
+                        href="tel:+923007654321"
+                        className="block text-sm font-semibold text-slate-700 hover:text-[#0d9488]"
+                      >
+                        +92 300 7654321
+                      </a>
+                    </div>
                   </div>
-                </a>
+                </div>
 
-                {/* EMAIL */}
                 <a
-                  href="mailto:info@brainsoftware.edu.pk"
+                  href="mailto:info@airs.edu.pk"
                   className="group flex items-start gap-4"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0d9488]/10 text-[#0d9488] transition-all group-hover:bg-[#0d9488] group-hover:text-white">
@@ -279,14 +280,17 @@ const ContactForm = () => {
                     </p>
 
                     <p className="mt-1 break-all text-sm font-semibold text-slate-700 group-hover:text-[#0d9488]">
-                      info@brainsoftware.edu.pk
+                      info@airs.edu.pk
+                    </p>
+
+                    <p className="mt-1 text-xs text-slate-500">
+                      We'll respond within 24 hours
                     </p>
                   </div>
                 </a>
 
-                {/* ADDRESS */}
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Bahawalpur%2C%20Punjab%2C%20Pakistan"
+                  href="https://maps.app.goo.gl/uHLFYLjUDkR6NpXf9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4"
@@ -306,7 +310,6 @@ const ContactForm = () => {
                   </div>
                 </a>
 
-                {/* WORKING HOURS */}
                 <div className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0d9488]/10 text-[#0d9488]">
                     <FiClock size={19} />
@@ -326,10 +329,8 @@ const ContactForm = () => {
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
       </div>

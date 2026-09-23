@@ -1,14 +1,24 @@
-import React from 'react'
-import Login from './components/auth/Login'
+
+import { Navigate, Route, Routes } from "react-router-dom";
+import Login from "./components/auth/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
+import DashboardLayout from "./pages/dashboard/DashboardLayout";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 const App = () => {
   return (
-    
-   <div>
-    <Login />
-   </div>
-    
-  )
-}
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
 
-export default App
+      <Route path="admin/login" element={<Login />} />
+
+      <Route element={<ProtectedRoute />}>
+        <Route path="/admin" element={<DashboardLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
+};
+
+export default App;

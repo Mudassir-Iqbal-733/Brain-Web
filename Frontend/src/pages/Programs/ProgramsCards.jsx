@@ -8,6 +8,8 @@ import {
   FiBookOpen,
 } from "react-icons/fi";
 
+import { Link } from "react-router-dom";
+
 import DPT from "../../assets/DPT.png";
 import CS from "../../assets/CS.png";
 import IT from "../../assets/IT.png";
@@ -16,6 +18,7 @@ import Pharmacy from "../../assets/Pharmacy.png";
 const programs = [
   {
     title: "Doctor of Physical Therapy (DPT)",
+    slug: "dpt",
     description:
       "Develop professional knowledge and practical skills in physical therapy and rehabilitation sciences for a rewarding healthcare career.",
     image: DPT,
@@ -24,6 +27,7 @@ const programs = [
   },
   {
     title: "ADP CS",
+    slug: "adp-cs",
     description:
       "Build a strong foundation in computer science with practical knowledge of programming, software development, databases, and modern technologies.",
     image: CS,
@@ -32,6 +36,7 @@ const programs = [
   },
   {
     title: "ADP IT",
+    slug: "adp-it",
     description:
       "Gain practical information technology skills covering modern computing, networks, databases, systems, and digital technologies.",
     image: IT,
@@ -40,6 +45,7 @@ const programs = [
   },
   {
     title: "Pharmacy Technician",
+    slug: "pharmacy-technician",
     description:
       "Develop essential pharmaceutical knowledge and practical skills to support professional pharmacy services and healthcare delivery.",
     image: Pharmacy,
@@ -84,7 +90,7 @@ const ProgramsCards = () => {
 
             return (
               <article
-                key={program.title}
+                key={program.slug}
                 className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0d9488]/30 hover:shadow-xl hover:shadow-[#0d9488]/10"
               >
                 <div className="flex flex-col lg:flex-row">
@@ -146,6 +152,17 @@ const ProgramsCards = () => {
                             </div>
                           </div>
                         </div>
+
+                        <Link
+                          to={`/programs/${program.slug}`}
+                          className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0d9488] transition-colors hover:text-teal-700"
+                        >
+                          View Program Details
+                          <FiArrowRight
+                            size={16}
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                          />
+                        </Link>
                       </div>
 
                       <div className="rounded-xl border border-cyan-100 bg-cyan-50/50 p-5">
@@ -161,17 +178,17 @@ const ProgramsCards = () => {
                           your professional career.
                         </p>
 
-                        <a
-                          href="/admission"
+                        <Link
+                          to={`/programs/${program.slug}`}
                           className="group/button mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#0d9488] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#0f766e] hover:shadow-lg hover:shadow-[#0d9488]/20"
                         >
-                          Apply Now
+                          View Details
 
                           <FiArrowRight
                             size={16}
                             className="transition-transform duration-300 group-hover/button:translate-x-1"
                           />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

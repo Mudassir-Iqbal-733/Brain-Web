@@ -11,49 +11,50 @@ const CampusFacilities = () => {
   const facilities = [
     {
       icon: FiMonitor,
-      title: "Modern Computer Labs",
+      title: "Modern Labs",
       description:
-        "Well-equipped computer labs with modern systems and technology for practical learning and hands-on training.",
-    },
-    {
-      icon: FiWifi,
-      title: "High-Speed Internet",
-      description:
-        "Reliable high-speed internet connectivity to support online learning, research, development, and digital activities.",
+        "Fully equipped rehabilitation and computer labs with latest technology",
     },
     {
       icon: FiBookOpen,
-      title: "Learning Resources",
+      title: "Library",
       description:
-        "Access to useful learning materials and resources that help students improve their knowledge and practical skills.",
+        "Extensive collection of books, journals, and digital resources",
     },
     {
-      icon: FiUsers,
-      title: "Collaborative Environment",
+      icon: FiWifi,
+      title: "Wi-Fi Campus",
       description:
-        "A friendly learning environment where students can collaborate, share ideas, and work together on projects.",
-    },
-    {
-      icon: FiCoffee,
-      title: "Student Comfort",
-      description:
-        "Comfortable spaces designed to help students stay focused, relaxed, and productive throughout their learning journey.",
+        "High-speed internet connectivity across the entire campus",
     },
     {
       icon: FiShield,
-      title: "Safe Environment",
+      title: "Clinical Training",
       description:
-        "A secure and welcoming campus environment where students can learn with confidence and peace of mind.",
+        "Hands-on clinical training at affiliated hospitals and clinics",
+    },
+    {
+      icon: FiCoffee,
+      title: "Student Lounge",
+      description:
+        "Comfortable spaces for student collaboration and relaxation",
+    },
+    {
+      icon: FiUsers,
+      title: "Transport",
+      description:
+        "Convenient transport facilities for students and staff",
     },
   ];
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-teal-50 py-16 sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-cyan-200/40 blur-3xl" />
+
       <div className="pointer-events-none absolute -right-32 bottom-10 h-72 w-72 rounded-full bg-teal-200/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#0d9488]/10 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0d9488] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-[#0d9488]" />
             Our Facilities
@@ -69,18 +70,18 @@ const CampusFacilities = () => {
           </div>
 
           <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base">
-            We provide a comfortable, modern, and supportive environment where
-            students can learn, practice, collaborate, and grow.
+            State-of-the-art facilities designed to enhance your learning
+            experience
           </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {facilities.map((facility, index) => {
+          {facilities.map((facility) => {
             const Icon = facility.icon;
 
             return (
               <div
-                key={index}
+                key={facility.title}
                 className="group rounded-2xl border border-white bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#0d9488]/20 hover:shadow-xl hover:shadow-teal-200/40"
               >
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50 text-[#0d9488] transition-all duration-300 group-hover:bg-[#0d9488] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#0d9488]/20">

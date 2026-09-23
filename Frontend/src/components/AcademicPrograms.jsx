@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FiActivity,
   FiCode,
@@ -16,24 +17,28 @@ import Pharmacy from "../assets/Pharmacy.png";
 const programs = [
   {
     title: "Doctor of Physical Therapy (DPT)",
+    slug: "dpt",
     image: DPT,
     icon: FiActivity,
     duration: "10 Semesters (5 Years)",
   },
   {
     title: "ADP CS",
+    slug: "adp-cs",
     image: CS,
     icon: FiCode,
     duration: "4 Semesters (2 Years)",
   },
   {
     title: "ADP IT",
+    slug: "adp-it",
     image: IT,
     icon: FiCpu,
     duration: "4 Semesters (2 Years)",
   },
   {
     title: "Pharmacy Technician",
+    slug: "pharmacy-technician",
     image: Pharmacy,
     icon: FiHeart,
     duration: "2 Years",
@@ -102,24 +107,22 @@ const AcademicPrograms = () => {
                   </h3>
 
                   <div className="mt-3 flex items-center gap-1.5 text-xs font-medium text-slate-500">
-                    <FiClock
-                      size={15}
-                      className="text-[#0d9488]"
-                    />
+                    <FiClock size={15} className="text-[#0d9488]" />
                     <span>{program.duration}</span>
                   </div>
 
                   <div className="mt-auto pt-7">
-                    <a
-                      href="/programs"
+                    <Link
+                      to={`/programs/${program.slug}`}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0d9488] transition-all duration-300 hover:text-[#0f766e]"
                     >
                       Learn More
+
                       <FiArrowRight
                         size={16}
                         className="transition-transform duration-300 group-hover:translate-x-1"
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -128,8 +131,8 @@ const AcademicPrograms = () => {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a
-            href="/programs"
+          <Link
+            to="/programs"
             className="group inline-flex items-center gap-2 rounded-full border border-[#0d9488] bg-white px-7 py-3.5 text-sm font-semibold text-[#0d9488] shadow-sm transition-all duration-300 hover:bg-[#0d9488] hover:text-white hover:shadow-lg hover:shadow-[#0d9488]/20"
           >
             View All Programs
@@ -138,7 +141,7 @@ const AcademicPrograms = () => {
               size={18}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

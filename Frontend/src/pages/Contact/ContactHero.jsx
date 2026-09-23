@@ -9,30 +9,33 @@ const ContactHero = () => {
   const contactCards = [
     {
       title: "Call Us",
-      value: "+92 311 1111111",
-      description: "Speak directly with our team",
+      value: "0622888596, 0622888597",
+      extraValue: "03212319576, 03314888596",
+      description: "We'll respond within 24 hours",
       icon: FiPhone,
-      href: "tel:+923111111111",
+      href: "tel:0622888596",
     },
     {
       title: "WhatsApp",
-      value: "+92 322 2222222",
+      value: "03314888596",
       description: "Message us on WhatsApp",
       icon: FaWhatsapp,
-      href: "https://wa.me/923222222222",
+      href: "https://wa.me/923314888596",
       external: true,
+      action: "Chat Now",
     },
     {
       title: "Email Us",
-      value: "info@brainsoftware.edu.pk",
-      description: "Send us your questions",
+      value: "info@airs.edu.pk",
+      description: "We'll respond within 24 hours",
       icon: FiMail,
-      href: "mailto:info@brainsoftware.edu.pk",
+      href: "mailto:info@airs.edu.pk",
     },
     {
       title: "Visit Us",
-      value: "Bahawalpur, Punjab",
-      description: "Find our education center",
+      value: "Bahawalpur, Punjab, Pakistan",
+      description: "Mon–Sat: 8:00am–4:00pm",
+      extraValue: "Sun: Closed",
       icon: FiMapPin,
       href: "https://www.google.com/maps/search/?api=1&query=Bahawalpur%2C%20Punjab%2C%20Pakistan",
       external: true,
@@ -46,9 +49,7 @@ const ContactHero = () => {
       <div className="pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-teal-200/30 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
           {contactCards.map((card) => {
             const Icon = card.icon;
 
@@ -63,7 +64,6 @@ const ContactHero = () => {
                 <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyan-50 transition-all duration-300 group-hover:scale-150" />
 
                 <div className="relative">
-
                   <div className="flex items-start justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0d9488]/10 text-[#0d9488] transition-all duration-300 group-hover:bg-[#0d9488] group-hover:text-white">
                       <Icon size={21} />
@@ -82,24 +82,34 @@ const ContactHero = () => {
                     {card.value}
                   </p>
 
+                  {card.extraValue && (
+                    <p className="mt-1 break-words text-sm font-semibold text-[#0d9488]">
+                      {card.extraValue}
+                    </p>
+                  )}
+
                   <p className="mt-2 text-sm leading-6 text-slate-500">
                     {card.description}
                   </p>
 
+                  {card.title === "Visit Us" && (
+                    <p className="text-sm leading-6 text-slate-500">
+                      Sun: Closed
+                    </p>
+                  )}
+
                   <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-slate-700 transition-colors group-hover:text-[#0d9488]">
-                    Connect Now
+                    {card.action || "Connect Now"}
+
                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                       →
                     </span>
                   </div>
-
                 </div>
               </a>
             );
           })}
-
         </div>
-
       </div>
     </section>
   );
