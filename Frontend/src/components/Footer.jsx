@@ -97,36 +97,52 @@ const Footer = () => {
             <ul className="mt-5 space-y-3">
               <li>
                 <a
-                  href="/programs"
-                  className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                  href="/programs/dpt"
+                  className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
+                  <FiArrowRight
+                    size={12}
+                    className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                  />
                   Doctor of Physical Therapy (DPT)
                 </a>
               </li>
 
               <li>
                 <a
-                  href="/programs"
-                  className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                  href="/programs/adp-cs"
+                  className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
+                  <FiArrowRight
+                    size={12}
+                    className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                  />
                   ADP Computer Science
                 </a>
               </li>
 
               <li>
                 <a
-                  href="/programs"
-                  className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                  href="/programs/adp-it"
+                  className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
+                  <FiArrowRight
+                    size={12}
+                    className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                  />
                   ADP Information Technology
                 </a>
               </li>
 
               <li>
                 <a
-                  href="/programs"
-                  className="text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
+                  href="/programs/pharmacy-technician"
+                  className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
+                  <FiArrowRight
+                    size={12}
+                    className="opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                  />
                   Pharmacy Technician
                 </a>
               </li>
@@ -155,10 +171,7 @@ const Footer = () => {
                   href="tel:0622888596"
                   className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  <FiPhone
-                    size={15}
-                    className="shrink-0 text-[#0d9488]"
-                  />
+                  <FiPhone size={15} className="shrink-0 text-[#0d9488]" />
                   0622-888596
                 </a>
 
@@ -166,10 +179,7 @@ const Footer = () => {
                   href="tel:0622888597"
                   className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  <FiPhone
-                    size={15}
-                    className="shrink-0 text-[#0d9488]"
-                  />
+                  <FiPhone size={15} className="shrink-0 text-[#0d9488]" />
                   0622-888597
                 </a>
 
@@ -177,10 +187,7 @@ const Footer = () => {
                   href="tel:03212319576"
                   className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  <FiPhone
-                    size={15}
-                    className="shrink-0 text-[#0d9488]"
-                  />
+                  <FiPhone size={15} className="shrink-0 text-[#0d9488]" />
                   0321-2319576
                 </a>
 
@@ -188,10 +195,7 @@ const Footer = () => {
                   href="tel:03314888596"
                   className="flex items-center gap-2 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
                 >
-                  <FiPhone
-                    size={15}
-                    className="shrink-0 text-[#0d9488]"
-                  />
+                  <FiPhone size={15} className="shrink-0 text-[#0d9488]" />
                   0331-4888596
                 </a>
               </div>
@@ -200,10 +204,7 @@ const Footer = () => {
                 href="mailto:info@airs.edu.pk"
                 className="flex items-center gap-3 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
               >
-                <FiMail
-                  size={16}
-                  className="shrink-0 text-[#0d9488]"
-                />
+                <FiMail size={16} className="shrink-0 text-[#0d9488]" />
                 info@airs.edu.pk
               </a>
 
@@ -213,10 +214,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-slate-400 transition-colors duration-300 hover:text-[#0d9488]"
               >
-                <FiGlobe
-                  size={16}
-                  className="shrink-0 text-[#0d9488]"
-                />
+                <FiGlobe size={16} className="shrink-0 text-[#0d9488]" />
                 www.airs.edu.pk
               </a>
             </div>
