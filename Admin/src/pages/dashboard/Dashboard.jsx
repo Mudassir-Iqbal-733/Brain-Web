@@ -1,36 +1,25 @@
+import { Outlet } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
+import WebsiteSettingsTabs from "../../components/website-settings/WebsiteSettingsTabs";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminLoggedIn");
-    navigate("/admin/login", { replace: true });
-  };
-
   return (
-    <div className="min-h-screen bg-slate-950 p-8 text-white">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium text-cyan-400">Admin Portal</p>
-          <h1 className="mt-1 text-3xl font-bold">Dashboard</h1>
+    <div className="space-y-6">
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="bg-linear-to-r from-[#0d9488] to-cyan-500 px-6 py-5">
+          <h1 className="text-2xl font-bold text-white">
+            Website Settings
+          </h1>
+
+          <p className="mt-1 text-sm text-white/80">
+            Manage your AIRS website settings
+          </p>
         </div>
 
-        <button
-          onClick={handleLogout}
-          className="rounded-full bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-700"
-        >
-          Logout
-        </button>
+        <WebsiteSettingsTabs />
       </div>
 
-      <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
-        <h2 className="text-xl font-semibold">Welcome to Dashboard</h2>
-        <p className="mt-2 text-sm text-slate-400">
-          Manage your Brain Inspire website from here.
-        </p>
-      </div>
+      <Outlet />
     </div>
   );
 };

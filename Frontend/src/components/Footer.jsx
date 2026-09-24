@@ -4,9 +4,6 @@ import {
   FiMail,
   FiGlobe,
   FiArrowRight,
-  FiFacebook,
-  FiInstagram,
-  FiYoutube,
 } from "react-icons/fi";
 
 import logo from "../assets/logo.png";
@@ -30,32 +27,6 @@ const Footer = () => {
               providing quality education, practical learning, and
               career-focused programs in healthcare and technology.
             </p>
-
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition-all duration-300 hover:border-[#0d9488] hover:bg-[#0d9488] hover:text-white"
-              >
-                <FiFacebook size={16} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition-all duration-300 hover:border-[#0d9488] hover:bg-[#0d9488] hover:text-white"
-              >
-                <FiInstagram size={16} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 text-slate-400 transition-all duration-300 hover:border-[#0d9488] hover:bg-[#0d9488] hover:text-white"
-              >
-                <FiYoutube size={16} />
-              </a>
-            </div>
           </div>
 
           <div>

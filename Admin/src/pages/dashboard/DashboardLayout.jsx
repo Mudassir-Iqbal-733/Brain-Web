@@ -1,38 +1,31 @@
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
-import { Outlet, useNavigate } from "react-router-dom";
+import Sidebar from "../../components/layout/Sidebar";
+import MobileSidebar from "../../components/layout/MobileSidebar";
+import Header from "../../components/layout/Header";
 
 const DashboardLayout = () => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminLoggedIn");
-    navigate("/admin/login", { replace: true });
-  };
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <header className="flex h-16 items-center justify-between border-b border-slate-800 bg-slate-900 px-6">
-        <div>
-          <h1 className="text-lg font-bold text-cyan-400">
-            Brain Inspire
-          </h1>
-          <p className="text-xs text-slate-400">Admin Panel</p>
-        </div>
+    <div className="min-h-screen bg-slate-50">
+      <Sidebar />
 
-        <button
-          onClick={handleLogout}
-          className="rounded-full bg-cyan-600 px-5 py-2 text-sm font-semibold transition hover:bg-cyan-700"
-        >
-          Logout
-        </button>
-      </header>
+      <MobileSidebar
+        open={mobileSidebarOpen}
+        setOpen={setMobileSidebarOpen}
+      />
 
-      <main className="p-6">
-        <Outlet />
-      </main>
+      <div className="lg:pl-72">
+        <Header setMobileSidebarOpen={setMobileSidebarOpen} />
+
+        <main className="min-h-[calc(100vh-80px)] p-5 sm:p-6 lg:p-8">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };
 
 export default DashboardLayout;
-
