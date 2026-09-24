@@ -75,7 +75,7 @@ const HeroSlider = () => {
       >
         <CarouselContent className="ml-0 h-full">
           {slides.map((slide, index) => (
-            <CarouselItem key={index} className="h-full pl-0">
+            <CarouselItem key={slide.title} className="h-full pl-0">
               <div className="relative flex h-[calc(100vh-144px)] min-h-[520px] w-full flex-col lg:flex-row">
                 <div className="relative flex h-[55%] w-full items-center overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-white px-6 py-8 sm:px-10 lg:h-full lg:w-1/2 lg:px-12 xl:px-16">
                   <div className="relative z-10 max-w-xl">
@@ -111,10 +111,13 @@ const HeroSlider = () => {
                   <img
                     src={slide.image}
                     alt={slide.title}
+                    width="1600"
+                    height="1000"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                    decoding="async"
                     className={`absolute inset-0 h-full w-full ${
-                      index === 0
-                        ? "object-contain"
-                        : "object-cover"
+                      index === 0 ? "object-contain" : "object-cover"
                     }`}
                   />
 
