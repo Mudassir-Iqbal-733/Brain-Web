@@ -24,12 +24,10 @@ const Sidebar = () => {
 
   const isActive = (path) => location.pathname === path;
 
-  // Dashboard active check - sub-routes ke liye bhi
   const isDashboardActive = location.pathname.startsWith("/admin/dashboard");
 
-  // Check karein ke kya koi sub-page open hai, taake parent button bhi highlight ho
   const isAcademicsActive = [
-    "/admin/programs",
+    "/admin/dashboard/programs",
     "/admin/faculty",
     "/admin/students",
     "/admin/admissions",
@@ -38,15 +36,14 @@ const Sidebar = () => {
   const isContentActive = [
     "/admin/events",
     "/admin/testimonials",
-    "/admin/settings",
-  ].includes(location.pathname);
+    "/admin/dashboard/settings",
+  ].some((path) => location.pathname.startsWith(path));
 
   const isInquiriesActive = [
     "/admin/contact-messages",
     "/admin/applications",
   ].includes(location.pathname);
 
-  // Automatically dropdown open karein agar us section ka page open hai
   useEffect(() => {
     if (isAcademicsActive) setAcademicsOpen(true);
     if (isContentActive) setContentOpen(true);
@@ -56,12 +53,12 @@ const Sidebar = () => {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden w-72 border-r border-slate-800 bg-slate-950 text-white lg:block">
       <div className="flex h-full flex-col">
-        {/* Header Section */}
         <div className="flex h-24 items-center border-b border-slate-800 px-6">
           <Link to="/admin/dashboard" className="flex items-center gap-4">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#0d9488] p-2 shadow-lg shadow-cyan-500/10">
               <span className="text-2xl font-bold text-white">A</span>
             </div>
+
             <div className="py-2">
               <h1 className="text-xl font-bold text-white">AIRS</h1>
               <p className="text-xs text-cyan-400">Admin Panel</p>
@@ -75,7 +72,6 @@ const Sidebar = () => {
           </p>
 
           <nav className="space-y-2">
-            {/* Dashboard - Ab sub-routes par bhi active rahega */}
             <Link
               to="/admin/dashboard"
               className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
@@ -88,7 +84,6 @@ const Sidebar = () => {
               Dashboard
             </Link>
 
-            {/* Academics Section */}
             <div>
               <button
                 type="button"
@@ -103,6 +98,7 @@ const Sidebar = () => {
                   <FiBookOpen size={19} />
                   Academics
                 </span>
+
                 {academicsOpen ? (
                   <FiChevronDown size={17} className="text-cyan-400" />
                 ) : (
@@ -113,7 +109,7 @@ const Sidebar = () => {
               {academicsOpen && (
                 <div className="mt-1 space-y-1 border-l border-cyan-500/20 pl-4">
                   {[
-                    { path: "/admin/programs", icon: <FiLayers size={16} />, label: "Programs" },
+                    { path: "/admin/dashboard/programs", icon: <FiLayers size={16} />, label: "Programs" },
                     { path: "/admin/faculty", icon: <FiUsers size={16} />, label: "Faculty" },
                     { path: "/admin/students", icon: <FiUserCheck size={16} />, label: "Students" },
                     { path: "/admin/admissions", icon: <FiFileText size={16} />, label: "Admissions" },
@@ -135,7 +131,6 @@ const Sidebar = () => {
               )}
             </div>
 
-            {/* Content Section */}
             <div>
               <button
                 type="button"
@@ -150,6 +145,7 @@ const Sidebar = () => {
                   <FiFileText size={19} />
                   Content
                 </span>
+
                 {contentOpen ? (
                   <FiChevronDown size={17} className={isContentActive ? "text-cyan-400" : "text-slate-500"} />
                 ) : (
@@ -162,13 +158,13 @@ const Sidebar = () => {
                   {[
                     { path: "/admin/events", icon: <FiCalendar size={16} />, label: "Events" },
                     { path: "/admin/testimonials", icon: <FiMessageSquare size={16} />, label: "Testimonials" },
-                    { path: "/admin/settings", icon: <FiSettings size={16} />, label: "Website Settings" },
+                    { path: "/admin/dashboard/settings/header", icon: <FiSettings size={16} />, label: "Website Settings" },
                   ].map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}
                       className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm transition-all duration-300 ${
-                        isActive(item.path)
+                        location.pathname.startsWith(item.path)
                           ? "bg-cyan-500/20 text-cyan-400"
                           : "text-slate-400 hover:bg-cyan-500/5 hover:text-cyan-300"
                       }`}
@@ -181,7 +177,6 @@ const Sidebar = () => {
               )}
             </div>
 
-            {/* Inquiries Section */}
             <div>
               <button
                 type="button"
@@ -196,6 +191,7 @@ const Sidebar = () => {
                   <FiMail size={19} />
                   Inquiries
                 </span>
+
                 {inquiriesOpen ? (
                   <FiChevronDown size={17} className={isInquiriesActive ? "text-cyan-400" : "text-slate-500"} />
                 ) : (
@@ -226,7 +222,6 @@ const Sidebar = () => {
               )}
             </div>
 
-            {/* Administration */}
             <Link
               to="/admin/admin-users"
               className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
@@ -241,12 +236,12 @@ const Sidebar = () => {
           </nav>
         </div>
 
-        {/* Footer */}
         <div className="border-t border-slate-800 p-4">
           <div className="rounded-xl border border-cyan-500/15 bg-cyan-500/5 px-4 py-3">
             <p className="text-xs font-semibold text-slate-300">
               Agile Institute of Rehabilitation Sciences
             </p>
+
             <p className="mt-1 text-[10px] text-cyan-500/60">
               Management System
             </p>

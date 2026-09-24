@@ -13,47 +13,47 @@ import { NavLink } from "react-router-dom";
 const settingsTabs = [
   {
     label: "Header",
-    path: "/admin/dashboard/header",
+    path: "/admin/dashboard/settings/header",
     icon: FiImage,
   },
   {
     label: "Footer",
-    path: "/admin/dashboard/footer",
+    path: "/admin/dashboard/settings/footer",
     icon: FiFileText,
   },
   {
     label: "CEO",
-    path: "/admin/dashboard/ceo",
+    path: "/admin/dashboard/settings/ceo",
     icon: FiUser,
   },
   {
     label: "General",
-    path: "/admin/dashboard/general",
+    path: "/admin/dashboard/settings/general",
     icon: FiGlobe,
   },
   {
     label: "SEO",
-    path: "/admin/dashboard/seo",
+    path: "/admin/dashboard/settings/seo",
     icon: FiSearch,
   },
   {
     label: "Social Media",
-    path: "/admin/dashboard/social-media",
+    path: "/admin/dashboard/settings/social-media",
     icon: FiShare2,
   },
   {
     label: "Contact",
-    path: "/admin/dashboard/contact",
+    path: "/admin/dashboard/settings/contact",
     icon: FiMail,
   },
   {
     label: "Newsletter",
-    path: "/admin/dashboard/newsletter",
+    path: "/admin/dashboard/settings/newsletter",
     icon: FiMail,
   },
   {
     label: "Announcement",
-    path: "/admin/dashboard/announcement",
+    path: "/admin/dashboard/settings/announcement",
     icon: FiBell,
   },
 ];
@@ -70,7 +70,7 @@ const WebsiteSettingsTabs = () => {
               key={tab.path}
               to={tab.path}
               className={({ isActive }) =>
-                `flex min-h-14.5 items-center justify-center gap-2 border-b-2 px-3 py-3 text-sm font-medium transition ${
+                `flex min-h-[58px] items-center justify-center gap-2 border-b-2 px-3 py-3 text-sm font-medium transition ${
                   isActive
                     ? "border-[#0d9488] bg-[#0d9488]/5 text-[#0d9488]"
                     : "border-transparent text-slate-600 hover:bg-slate-50 hover:text-[#0d9488]"
