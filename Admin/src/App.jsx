@@ -11,6 +11,9 @@ import FooterSettings from "./components/website-settings/FooterSettings";
 import CEOSettings from "./components/website-settings/CEOSettings";
 import WebsiteSettingsLayout from "./components/website-settings/WebsiteSettingsLayout";
 import Programs from "./pages/programs";
+import ContactSettings from "./components/website-settings/ContactSettings";
+import NewsletterSettings from "./components/website-settings/NewsletterSettings";
+import GeneralSettings from "./components/website-settings/GeneralSettings";
 
 const App = () => {
   return (
@@ -32,6 +35,9 @@ const App = () => {
               <Route path="header" element={<HeaderSettings />} />
               <Route path="footer" element={<FooterSettings />} />
               <Route path="ceo" element={<CEOSettings />} />
+              <Route path="general" element={<GeneralSettings />} />
+              <Route path="contact" element={<ContactSettings />} />
+               <Route path="newsletter" element={<NewsletterSettings />} />
             </Route>
             <Route path="programs" element={<Programs />} />
           </Route>

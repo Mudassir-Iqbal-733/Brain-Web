@@ -8,18 +8,17 @@ import {
   FiLayers,
   FiMail,
   FiMessageSquare,
-  FiSettings,
   FiUserCheck,
   FiUsers,
   FiX,
+  FiLogOut,
 } from "react-icons/fi";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-
-// import logo from "../../assets/logo.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const MobileSidebar = ({ open, setOpen }) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [academicsOpen, setAcademicsOpen] = useState(true);
   const [contentOpen, setContentOpen] = useState(false);
@@ -31,8 +30,23 @@ const MobileSidebar = ({ open, setOpen }) => {
     setOpen(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("adminLoggedIn");
+    navigate("/admin/login", { replace: true });
+  };
+
   return (
     <>
+      <style>{`
+        .mobile-sidebar-scroll::-webkit-scrollbar {
+          display: none;
+        }
+        .mobile-sidebar-scroll {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+
       <div
         onClick={closeSidebar}
         className={`fixed inset-0 z-40 bg-slate-950/60 transition-opacity lg:hidden ${
@@ -47,23 +61,19 @@ const MobileSidebar = ({ open, setOpen }) => {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex h-20 items-center justify-between border-b border-slate-800 px-5">
+        <div className="flex h-24 shrink-0 items-center justify-between border-b border-slate-800 px-6">
           <Link
             to="/admin/dashboard"
             onClick={closeSidebar}
-            className="flex items-center gap-3"
+            className="flex items-center gap-4"
           >
-            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white">
-              <img
-                // src={logo}
-                alt="AIRS"
-                className="h-full w-full object-contain p-1"
-              />
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#0d9488] p-2 shadow-lg shadow-cyan-500/10">
+              <span className="text-2xl font-bold text-white">A</span>
             </div>
 
-            <div>
-              <h1 className="text-lg font-bold">AIRS</h1>
-              <p className="text-xs text-slate-400">Admin Panel</p>
+            <div className="py-2">
+              <h1 className="text-xl font-bold text-white">AIRS</h1>
+              <p className="text-xs text-cyan-400">Admin Panel</p>
             </div>
           </Link>
 
@@ -77,8 +87,8 @@ const MobileSidebar = ({ open, setOpen }) => {
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-4 py-6">
-          <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+        <div className="mobile-sidebar-scroll flex-1 overflow-y-auto px-4 py-6">
+          <p className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-500/60">
             Main Menu
           </p>
 
@@ -86,10 +96,10 @@ const MobileSidebar = ({ open, setOpen }) => {
             <Link
               to="/admin/dashboard"
               onClick={closeSidebar}
-              className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold ${
+              className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
                 isActive("/admin/dashboard")
-                  ? "bg-[#0d9488] text-white"
-                  : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  ? "bg-[#0d9488] text-white shadow-lg shadow-[#0d9488]/25"
+                  : "text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300"
               }`}
             >
               <FiGrid size={19} />
@@ -100,7 +110,14 @@ const MobileSidebar = ({ open, setOpen }) => {
               <button
                 type="button"
                 onClick={() => setAcademicsOpen(!academicsOpen)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white"
+                className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                  location.pathname.startsWith("/admin/programs") ||
+                  location.pathname.startsWith("/admin/faculty") ||
+                  location.pathname.startsWith("/admin/students") ||
+                  location.pathname.startsWith("/admin/admissions")
+                    ? "bg-[#0d9488]/20 text-cyan-400"
+                    : "text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300"
+                }`}
               >
                 <span className="flex items-center gap-3">
                   <FiBookOpen size={19} />
@@ -108,65 +125,34 @@ const MobileSidebar = ({ open, setOpen }) => {
                 </span>
 
                 {academicsOpen ? (
-                  <FiChevronDown size={17} />
+                  <FiChevronDown size={17} className="text-cyan-400" />
                 ) : (
-                  <FiChevronRight size={17} />
+                  <FiChevronRight size={17} className="text-slate-500" />
                 )}
               </button>
 
               {academicsOpen && (
-                <div className="mt-1 space-y-1 pl-4">
-                  <Link
-                    to="/admin/programs"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/programs")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiLayers size={16} />
-                    Programs
-                  </Link>
-
-                  <Link
-                    to="/admin/faculty"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/faculty")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiUsers size={16} />
-                    Faculty
-                  </Link>
-
-                  <Link
-                    to="/admin/students"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/students")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiUserCheck size={16} />
-                    Students
-                  </Link>
-
-                  <Link
-                    to="/admin/admissions"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/admissions")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiFileText size={16} />
-                    Admissions
-                  </Link>
+                <div className="mt-1 space-y-1 border-l border-cyan-500/20 pl-4">
+                  {[
+                    { path: "/admin/dashboard/programs", icon: <FiLayers size={16} />, label: "Programs" },
+                    { path: "/admin/faculty", icon: <FiUsers size={16} />, label: "Faculty" },
+                    { path: "/admin/students", icon: <FiUserCheck size={16} />, label: "Students" },
+                    { path: "/admin/admissions", icon: <FiFileText size={16} />, label: "Admissions" },
+                  ].map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={closeSidebar}
+                      className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm transition-all duration-300 ${
+                        isActive(item.path)
+                          ? "bg-cyan-500/20 text-cyan-400"
+                          : "text-slate-400 hover:bg-cyan-500/5 hover:text-cyan-300"
+                      }`}
+                    >
+                      {item.icon}
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -175,7 +161,12 @@ const MobileSidebar = ({ open, setOpen }) => {
               <button
                 type="button"
                 onClick={() => setContentOpen(!contentOpen)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white"
+                className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                  location.pathname.startsWith("/admin/events") ||
+                  location.pathname.startsWith("/admin/testimonials")
+                    ? "bg-[#0d9488]/20 text-cyan-400"
+                    : "text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300"
+                }`}
               >
                 <span className="flex items-center gap-3">
                   <FiFileText size={19} />
@@ -183,52 +174,32 @@ const MobileSidebar = ({ open, setOpen }) => {
                 </span>
 
                 {contentOpen ? (
-                  <FiChevronDown size={17} />
+                  <FiChevronDown size={17} className="text-cyan-400" />
                 ) : (
-                  <FiChevronRight size={17} />
+                  <FiChevronRight size={17} className="text-slate-500" />
                 )}
               </button>
 
               {contentOpen && (
-                <div className="mt-1 space-y-1 pl-4">
-                  <Link
-                    to="/admin/events"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/events")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiCalendar size={16} />
-                    Events
-                  </Link>
-
-                  <Link
-                    to="/admin/testimonials"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/testimonials")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiMessageSquare size={16} />
-                    Testimonials
-                  </Link>
-
-                  <Link
-                    to="/admin/settings"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/settings")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiSettings size={16} />
-                    Website Settings
-                  </Link>
+                <div className="mt-1 space-y-1 border-l border-cyan-500/20 pl-4">
+                  {[
+                    { path: "/admin/events", icon: <FiCalendar size={16} />, label: "Events" },
+                    { path: "/admin/testimonials", icon: <FiMessageSquare size={16} />, label: "Testimonials" },
+                  ].map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={closeSidebar}
+                      className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm transition-all duration-300 ${
+                        isActive(item.path)
+                          ? "bg-cyan-500/20 text-cyan-400"
+                          : "text-slate-400 hover:bg-cyan-500/5 hover:text-cyan-300"
+                      }`}
+                    >
+                      {item.icon}
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -237,7 +208,12 @@ const MobileSidebar = ({ open, setOpen }) => {
               <button
                 type="button"
                 onClick={() => setInquiriesOpen(!inquiriesOpen)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white"
+                className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                  location.pathname.startsWith("/admin/contact-messages") ||
+                  location.pathname.startsWith("/admin/applications")
+                    ? "bg-[#0d9488]/20 text-cyan-400"
+                    : "text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300"
+                }`}
               >
                 <span className="flex items-center gap-3">
                   <FiMail size={19} />
@@ -245,39 +221,32 @@ const MobileSidebar = ({ open, setOpen }) => {
                 </span>
 
                 {inquiriesOpen ? (
-                  <FiChevronDown size={17} />
+                  <FiChevronDown size={17} className="text-cyan-400" />
                 ) : (
-                  <FiChevronRight size={17} />
+                  <FiChevronRight size={17} className="text-slate-500" />
                 )}
               </button>
 
               {inquiriesOpen && (
-                <div className="mt-1 space-y-1 pl-4">
-                  <Link
-                    to="/admin/contact-messages"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/contact-messages")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiMail size={16} />
-                    Contact Messages
-                  </Link>
-
-                  <Link
-                    to="/admin/applications"
-                    onClick={closeSidebar}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm ${
-                      isActive("/admin/applications")
-                        ? "bg-cyan-500/10 text-cyan-400"
-                        : "text-slate-400 hover:text-white"
-                    }`}
-                  >
-                    <FiFileText size={16} />
-                    Applications
-                  </Link>
+                <div className="mt-1 space-y-1 border-l border-cyan-500/20 pl-4">
+                  {[
+                    { path: "/admin/contact-messages", icon: <FiMail size={16} />, label: "Contact Messages" },
+                    { path: "/admin/applications", icon: <FiFileText size={16} />, label: "Applications" },
+                  ].map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={closeSidebar}
+                      className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm transition-all duration-300 ${
+                        isActive(item.path)
+                          ? "bg-cyan-500/20 text-cyan-400"
+                          : "text-slate-400 hover:bg-cyan-500/5 hover:text-cyan-300"
+                      }`}
+                    >
+                      {item.icon}
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -285,10 +254,10 @@ const MobileSidebar = ({ open, setOpen }) => {
             <Link
               to="/admin/admin-users"
               onClick={closeSidebar}
-              className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold ${
+              className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
                 isActive("/admin/admin-users")
-                  ? "bg-[#0d9488] text-white"
-                  : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  ? "bg-[#0d9488] text-white shadow-lg shadow-[#0d9488]/25"
+                  : "text-slate-300 hover:bg-cyan-500/10 hover:text-cyan-300"
               }`}
             >
               <FiUsers size={19} />
@@ -297,15 +266,25 @@ const MobileSidebar = ({ open, setOpen }) => {
           </nav>
         </div>
 
-        <div className="border-t border-slate-800 p-4">
-          <div className="rounded-xl border border-[#0d9488]/10 bg-[#0d9488]/5 px-4 py-3">
+        <div className="shrink-0 border-t border-slate-800 p-4">
+          <div className="rounded-xl border border-cyan-500/15 bg-cyan-500/5 px-4 py-3">
             <p className="text-xs font-semibold text-slate-300">
               Agile Institute of Rehabilitation Sciences
             </p>
-            <p className="mt-1 text-[10px] text-slate-500">
+
+            <p className="mt-1 text-[10px] text-cyan-500/60">
               Management System
             </p>
           </div>
+
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="mt-3 flex w-full items-center justify-center gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-semibold text-red-400 transition-all duration-300 hover:bg-red-500/20 hover:text-red-300"
+          >
+            <FiLogOut size={18} />
+            Logout
+          </button>
         </div>
       </aside>
     </>
