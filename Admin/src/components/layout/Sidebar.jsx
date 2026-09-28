@@ -125,7 +125,7 @@ const Sidebar = () => {
               {academicsOpen && (
                 <div className="mt-1 space-y-1 border-l border-cyan-500/20 pl-4">
                   {[
-                    { path: "/admin/dashboard/programs", icon: <FiLayers size={16} />, label: "Programs" },
+                    { path: "/admin/programs", icon: <FiLayers size={16} />, label: "Programs" },
                     { path: "/admin/faculty", icon: <FiUsers size={16} />, label: "Faculty" },
                     { path: "/admin/students", icon: <FiUserCheck size={16} />, label: "Students" },
                     { path: "/admin/admissions", icon: <FiFileText size={16} />, label: "Admissions" },
