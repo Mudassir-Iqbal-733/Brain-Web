@@ -18,6 +18,10 @@ import Programs from "./pages/programs/Programs";
 import AddProgram from "./pages/programs/AddProgram";
 import EditProgram from "./pages/programs/EditProgram";
 import ViewProgram from "./pages/programs/ViewProgram";
+import FacultyForm from "./pages/faculty/FacultyForm";
+import Faculty from "./pages/faculty/Faculty";
+import Events from "./pages/events/Events";
+import EventForm from "./pages/events/EventForm";
 
 const App = () => {
   return (
@@ -49,6 +53,11 @@ const App = () => {
           <Route path="programs/add" element={<AddProgram />} />
           <Route path="programs/edit/:id" element={<EditProgram />} />
           <Route path="programs/view/:id" element={<ViewProgram />} />
+           <Route path="faculty" element={<Faculty />} />
+           <Route path="faculty/add" element={<FacultyForm />} />
+           <Route path="faculty/edit/:id" element={<FacultyForm />} />
+           <Route path="events" element={<Events/>} />
+           <Route path="events/add" element={<EventForm/>} />
         </Route>
       </Route>
 

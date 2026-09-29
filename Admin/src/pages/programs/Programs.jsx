@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import {
   FiPlus,
-  FiFilter,
-  FiRotateCcw,
   FiEdit,
   FiEye,
   FiTrash2,
 } from "react-icons/fi";
+import SearchFilter from "../../components/common/SearchFilter";
 
 const initialPrograms = [
   {
@@ -58,22 +57,13 @@ const Programs = () => {
 
   const [programs, setPrograms] = useState(initialPrograms);
   const [search, setSearch] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
   const [featuredFilter, setFeaturedFilter] = useState("All");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedSearch(search);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [search]);
 
   const filteredPrograms = programs.filter((program) => {
     const matchesSearch = program.title
       .toLowerCase()
-      .includes(debouncedSearch.toLowerCase());
+      .includes(search.toLowerCase());
 
     const matchesStatus =
       statusFilter === "All" || program.status === statusFilter;
@@ -92,7 +82,6 @@ const Programs = () => {
 
   const handleReset = () => {
     setSearch("");
-    setDebouncedSearch("");
     setStatusFilter("All");
     setFeaturedFilter("All");
   };
@@ -128,7 +117,6 @@ const Programs = () => {
 
   return (
     <div className="space-y-6">
-
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">
@@ -150,8 +138,7 @@ const Programs = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-
-        <div className="rounded-xl border-l-4 border-blue-500 bg-white p-5 shadow-sm">
+        <div className="rounded-xl border-l-4 border-[#0d9488] bg-white p-5 shadow-sm">
           <p className="text-sm font-medium text-slate-500">Total Programs</p>
           <p className="mt-1 text-3xl font-bold text-slate-800">
             {totalPrograms}
@@ -166,84 +153,45 @@ const Programs = () => {
         </div>
 
         <div className="rounded-xl border-l-4 border-yellow-500 bg-white p-5 shadow-sm">
-          <p className="text-sm font-medium text-slate-500">Featured Programs</p>
+          <p className="text-sm font-medium text-slate-500">
+            Featured Programs
+          </p>
           <p className="mt-1 text-3xl font-bold text-slate-800">
             {featuredPrograms}
           </p>
         </div>
-
       </div>
 
-      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-
-          <div className="md:col-span-1">
-            <label className="mb-2 block text-sm font-semibold text-slate-700">
-              Search
-            </label>
-
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search programs..."
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-teal-200 focus:border-[#0d9488] focus:ring-4 focus:ring-[#0d9488]/10"
-            />
-          </div>
-
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-700">
-              Status
-            </label>
-
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition hover:border-teal-200 focus:border-[#0d9488] focus:ring-4 focus:ring-[#0d9488]/10"
-            >
-              <option value="All">All</option>
-              <option value="Active">Active</option>
-              <option value="Inactive">Inactive</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-700">
-              Featured
-            </label>
-
-            <select
-              value={featuredFilter}
-              onChange={(e) => setFeaturedFilter(e.target.value)}
-              className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-900 outline-none transition hover:border-teal-200 focus:border-[#0d9488] focus:ring-4 focus:ring-[#0d9488]/10"
-            >
-              <option value="All">All</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-          </div>
-
-          <div className="flex items-end gap-2">
-            <button
-              type="button"
-              className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-[#0d9488] px-4 text-sm font-semibold text-white shadow-md shadow-[#0d9488]/20 transition hover:bg-[#0b7d72]"
-            >
-              <FiFilter size={16} />
-              Filter
-            </button>
-
-            <button
-              type="button"
-              onClick={handleReset}
-              className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-4 text-sm font-semibold text-slate-700 transition hover:bg-slate-200"
-            >
-              <FiRotateCcw size={16} />
-              Reset
-            </button>
-          </div>
-
-        </div>
-      </div>
+      <SearchFilter
+        search={search}
+        setSearch={setSearch}
+        searchPlaceholder="Search programs..."
+        filters={[
+          {
+            name: "status",
+            label: "Status",
+            value: statusFilter,
+            onChange: setStatusFilter,
+            options: [
+              { value: "All", label: "All" },
+              { value: "Active", label: "Active" },
+              { value: "Inactive", label: "Inactive" },
+            ],
+          },
+          {
+            name: "featured",
+            label: "Featured",
+            value: featuredFilter,
+            onChange: setFeaturedFilter,
+            options: [
+              { value: "All", label: "All" },
+              { value: "Yes", label: "Yes" },
+              { value: "No", label: "No" },
+            ],
+          },
+        ]}
+        onReset={handleReset}
+      />
 
       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="overflow-x-auto">
@@ -374,7 +322,6 @@ const Programs = () => {
           </table>
         </div>
       </div>
-
     </div>
   );
 };
