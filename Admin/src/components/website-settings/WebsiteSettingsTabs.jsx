@@ -7,6 +7,7 @@ import {
   FiSearch,
   FiShare2,
   FiUser,
+  FiExternalLink,
 } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
@@ -55,6 +56,11 @@ const settingsTabs = [
     label: "Announcement",
     path: "/admin/dashboard/settings/announcement",
     icon: FiBell,
+  },
+  {
+    label: "Popup",
+    path: "/admin/dashboard/settings/popup",
+    icon: FiExternalLink,
   },
 ];
 

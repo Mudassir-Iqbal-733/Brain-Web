@@ -29,7 +29,7 @@ const Sidebar = () => {
   const isDashboardActive = location.pathname.startsWith("/admin/dashboard");
 
   const isAcademicsActive = [
-    "/admin/dashboard/programs",
+    "/admin/programs",
     "/admin/faculty",
     "/admin/students",
     "/admin/admissions",

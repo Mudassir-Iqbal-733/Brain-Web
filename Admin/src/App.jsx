@@ -22,6 +22,8 @@ import FacultyForm from "./pages/faculty/FacultyForm";
 import Faculty from "./pages/faculty/Faculty";
 import Events from "./pages/events/Events";
 import EventForm from "./pages/events/EventForm";
+import AnnouncementSettings from "./components/website-settings/AnnouncementSettings";
+import PopupSettings from "./components/website-settings/PopupSettings";
 
 const App = () => {
   return (
@@ -46,6 +48,8 @@ const App = () => {
               <Route path="general" element={<GeneralSettings />} />
               <Route path="contact" element={<ContactSettings />} />
               <Route path="newsletter" element={<NewsletterSettings />} />
+              <Route path="announcement" element={<AnnouncementSettings />} />
+              <Route path="popup" element={<PopupSettings />} />
             </Route>
           </Route>
 
